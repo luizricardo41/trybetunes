@@ -8,11 +8,11 @@ class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <body>
+        <section>
           <Header />
           <Content />
           <Footer />
-        </body>
+        </section>
       </BrowserRouter>
     );
   }
