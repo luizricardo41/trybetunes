@@ -1,0 +1,47 @@
+.content-total {
+  align-items: center;
+  display: flex;
+  flex-flow: column wrap;
+  height: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  position: fixed;
+}
+
+.login {
+  align-items: center;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.login > label {
+  padding: 10px;
+}
+
+.header {
+  background-color: blue;
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.footer {
+  background-color: blue;
+  color: aliceblue;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  margin-top: 600px;
+  position: fixed;
+  width: 100%;
+}
+
+.footer > footer {
+  padding: 25px 0;
+}
