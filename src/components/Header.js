@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Loading from '../pages/Loading';
 import { getUser } from '../services/userAPI';
 
@@ -25,22 +26,66 @@ class Header extends React.Component {
     } = this.state;
     if (verifyName) {
       return (
-        <header data-testid="header-component">
-          <h1>TrybeTunes</h1>
-          <span data-testid="header-user-name">
-            Usuário:
-            {' '}
-            {userInfo.name}
-          </span>
-        </header>
+        <div>
+          <header data-testid="header-component">
+            <h1>TrybeTunes</h1>
+            <nav>
+              <Link
+                to="/search"
+                data-testid="link-to-search"
+              >
+                Pequisa
+              </Link>
+              <Link
+                to="/favorites"
+                data-testid="link-to-favorites"
+              >
+                Músicas Favoritas
+              </Link>
+              <Link
+                to="/profile"
+                data-testid="link-to-profile"
+              >
+                Perfil
+              </Link>
+            </nav>
+            <span>
+              Usuário:
+              {' '}
+              {userInfo.name}
+            </span>
+          </header>
+        </div>
       );
     }
     if (verifyName === false) {
       return (
-        <header data-testid="header-component">
-          <h1>TrybeTunes</h1>
-          <Loading />
-        </header>
+        <div>
+          <header>
+            <h1>TrybeTunes</h1>
+            <nav>
+              <Link
+                to="/search"
+                data-testid="link-to-search"
+              >
+                Pequisa
+              </Link>
+              <Link
+                to="/favorites"
+                data-testid="link-to-favorites"
+              >
+                Músicas Favoritas
+              </Link>
+              <Link
+                to="/profile"
+                data-testid="link-to-profile"
+              >
+                Perfil
+              </Link>
+            </nav>
+            <Loading />
+          </header>
+        </div>
       );
     }
   }
