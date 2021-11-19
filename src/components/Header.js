@@ -49,7 +49,7 @@ class Header extends React.Component {
                 Perfil
               </Link>
             </nav>
-            <span>
+            <span data-testid="header-user-name">
               Usuário:
               {' '}
               {userInfo.name}
@@ -61,7 +61,7 @@ class Header extends React.Component {
     if (verifyName === false) {
       return (
         <div>
-          <header>
+          <header data-testid="header-component">
             <h1>TrybeTunes</h1>
             <nav>
               <Link
