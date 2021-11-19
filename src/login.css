@@ -20,6 +20,9 @@
 }
 
 .login > label {
+  align-items: center;
+  display: flex;
+  flex-flow: column wrap;
   padding: 10px;
 }
 

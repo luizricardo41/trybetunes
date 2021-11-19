@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
 import Loading from './Loading';
+import '../login.css';
 
 export default class Login extends Component {
   constructor() {
@@ -15,10 +16,6 @@ export default class Login extends Component {
     this.enableButton = this.enableButton.bind(this);
     this.infoUser = this.infoUser.bind(this);
   }
-
-  // componentDidMount() {
-  //   this.infoUser();
-  // }
 
   handleChange({ target }) {
     const { name, value } = target;
@@ -72,9 +69,9 @@ export default class Login extends Component {
       return <Loading />;
     }
     return (
-      <div data-testid="page-login">
+      <div data-testid="page-login" className="login">
+        <h1>TrybeTunes</h1>
         <label htmlFor="nameUser">
-          Login:
           <input
             type="text"
             name="nameUser"
