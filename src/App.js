@@ -7,11 +7,8 @@ class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="content-total">
-          <div className="content">
-            <Content />
-          </div>
-        </div>
+
+        <Content />
       </BrowserRouter>
     );
   }
