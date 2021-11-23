@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import MusicCard from '../components/MusicCard';
 import getMusics from '../services/musicsAPI';
 import Loading from './Loading';
+import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 
 export default class Album extends Component {
   constructor() {
@@ -17,6 +18,13 @@ export default class Album extends Component {
     const { match: { params } } = this.props;
     getMusics(params.id).then((result) => this.setState({
       album: result,
+    }));
+    this.recoveryFavorites();
+  }
+
+  recoveryFavorites = () => {
+    getFavoriteSongs().then((data) => this.setState({
+      musicsFavorites: data,
     }));
   }
 
@@ -44,6 +52,7 @@ export default class Album extends Component {
     const {
       state: {
         album,
+        musicsFavorites,
       },
       pageAlbum,
     } = this;
@@ -53,15 +62,17 @@ export default class Album extends Component {
         <Header />
         {(album.length === 0)
           ? <Loading /> : pageAlbum()}
-        {verifyAlbum.map(({ trackName, trackId, previewUrl }) => (
-          <div key={ trackName }>
-            <p>{ trackName }</p>
-            <MusicCard
-              trackId={ trackId }
-              previewUrl={ previewUrl }
-              album={ album }
-            />
-          </div>))}
+        {!musicsFavorites ? <Loading />
+          : verifyAlbum.map(({ trackName, trackId, previewUrl }) => (
+            <div key={ trackName }>
+              <p>{ trackName }</p>
+              <MusicCard
+                trackId={ trackId }
+                previewUrl={ previewUrl }
+                album={ album }
+                musicsFavorites={ musicsFavorites }
+              />
+            </div>))}
       </div>
     );
   }

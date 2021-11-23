@@ -19,7 +19,6 @@ export default class MusicCard extends Component {
       const object = {
         result: album.filter((music) => music.trackId === parseInt(id, 10)),
       };
-      console.log(object.result);
       this.setState({
         load: true,
         [name]: value,
