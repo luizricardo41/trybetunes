@@ -47,12 +47,21 @@ export default class Album extends Component {
       },
       pageAlbum,
     } = this;
+    const verifyAlbum = album.filter((track) => track.trackName !== undefined);
     return (
       <div>
         <Header />
         {(album.length === 0)
           ? <Loading /> : pageAlbum()}
-        <MusicCard album={ album } />
+        {verifyAlbum.map(({ trackName, trackId, previewUrl }) => (
+          <div key={ trackName }>
+            <p>{ trackName }</p>
+            <MusicCard
+              trackId={ trackId }
+              previewUrl={ previewUrl }
+              album={ album }
+            />
+          </div>))}
       </div>
     );
   }
