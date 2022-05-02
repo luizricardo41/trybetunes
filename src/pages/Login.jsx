@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
 import Loading from './Loading';
-import '../login.css';
+import '../css/login.css';
 
 export default class Login extends Component {
   constructor() {
@@ -70,7 +70,10 @@ export default class Login extends Component {
     }
     return (
       <div data-testid="page-login" className="login">
-        <h1>TrybeTunes</h1>
+        <div className="name-app">
+          <h1 className="trybe">TryBE</h1>
+          <h1 className="tunes">Tunes</h1>
+        </div>
         <label htmlFor="nameUser">
           <input
             type="text"
@@ -81,6 +84,7 @@ export default class Login extends Component {
           />
         </label>
         <button
+          className="btn-login"
           type="submit"
           data-testid="login-submit-button"
           disabled={ buttonEnable }
