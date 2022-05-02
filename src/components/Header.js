@@ -24,70 +24,42 @@ class Header extends React.Component {
       verifyName,
       userInfo,
     } = this.state;
-    if (verifyName) {
-      return (
-        <div>
-          <header data-testid="header-component">
-            <h1>TrybeTunes</h1>
-            <nav>
-              <Link
-                to="/search"
-                data-testid="link-to-search"
-              >
-                Pequisa
-              </Link>
-              <Link
-                to="/favorites"
-                data-testid="link-to-favorites"
-              >
-                Músicas Favoritas
-              </Link>
-              <Link
-                to="/profile"
-                data-testid="link-to-profile"
-              >
-                Perfil
-              </Link>
-            </nav>
-            <span data-testid="header-user-name">
-              Usuário:
-              {' '}
-              {userInfo.name}
-            </span>
-          </header>
+
+    return (
+      <header className="header-app">
+        <div className="div-logo">
+          <h1>TrybeTunes</h1>
         </div>
-      );
-    }
-    if (verifyName === false) {
-      return (
-        <div>
-          <header data-testid="header-component">
-            <h1>TrybeTunes</h1>
-            <nav>
-              <Link
-                to="/search"
-                data-testid="link-to-search"
-              >
-                Pequisa
-              </Link>
-              <Link
-                to="/favorites"
-                data-testid="link-to-favorites"
-              >
-                Músicas Favoritas
-              </Link>
-              <Link
-                to="/profile"
-                data-testid="link-to-profile"
-              >
-                Perfil
-              </Link>
-            </nav>
-            <Loading />
-          </header>
+        <div className="div-navigator">
+          <nav className="nav">
+            <Link
+              to="/search"
+              data-testid="link-to-search"
+            >
+              Pequisa
+            </Link>
+            <Link
+              to="/favorites"
+              data-testid="link-to-favorites"
+            >
+              Músicas Favoritas
+            </Link>
+            <Link
+              to="/profile"
+              data-testid="link-to-profile"
+            >
+              Perfil
+            </Link>
+          </nav>
         </div>
-      );
-    }
+        <div>
+          <h4>
+            Usuário:
+            { verifyName ? ` ${userInfo.name}` : <Loading /> }
+          </h4>
+        </div>
+      </header>
+    );
   }
 }
 
