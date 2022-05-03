@@ -3,7 +3,7 @@
   margin: 0;
 }
 
-#root {
+.total-login {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -12,7 +12,7 @@
 }
 
 .login {
-  width: 50vw;
+  width: 30vw;
   height: 380px;
   background-color: #FCE79E;
   display: flex;
@@ -50,14 +50,14 @@
 .login input {
   width: 80%;
   padding: 0.7rem;
-  font-size: x-large;
+  font-size: medium;
 }
 
 .btn-login {
   padding: 0.8rem 1rem;
   border-radius: 10px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.685);
-  font-size: x-large;
+  font-size: medium;
   border: none;
 }
 
