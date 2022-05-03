@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Loading from '../pages/Loading';
 import { getUser } from '../services/userAPI';
+import '../css/header.css';
 
 class Header extends React.Component {
   constructor() {
@@ -27,8 +28,17 @@ class Header extends React.Component {
 
     return (
       <header className="header-app">
-        <div className="div-logo">
-          <h1>TrybeTunes</h1>
+        <div className="header-logo-user">
+          <div className="name-app-header">
+            <h1>TryBE</h1>
+            <h1>Tunes</h1>
+          </div>
+          <div>
+            <h4>
+              Usuário:
+              { verifyName ? ` ${userInfo.name}` : <Loading /> }
+            </h4>
+          </div>
         </div>
         <div className="div-navigator">
           <nav className="nav">
@@ -51,12 +61,6 @@ class Header extends React.Component {
               Perfil
             </Link>
           </nav>
-        </div>
-        <div>
-          <h4>
-            Usuário:
-            { verifyName ? ` ${userInfo.name}` : <Loading /> }
-          </h4>
         </div>
       </header>
     );

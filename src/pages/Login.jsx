@@ -69,29 +69,32 @@ export default class Login extends Component {
       return <Loading />;
     }
     return (
-      <div data-testid="page-login" className="login">
-        <div className="name-app">
-          <h1 className="trybe">TryBE</h1>
-          <h1 className="tunes">Tunes</h1>
+      <div className="total-login">
+
+        <div data-testid="page-login" className="login">
+          <div className="name-app">
+            <h1 className="trybe">TryBE</h1>
+            <h1 className="tunes">Tunes</h1>
+          </div>
+          <label htmlFor="nameUser">
+            <input
+              type="text"
+              name="nameUser"
+              placeholder="Nome"
+              data-testid="login-name-input"
+              onChange={ handleChange }
+            />
+          </label>
+          <button
+            className="btn-login"
+            type="submit"
+            data-testid="login-submit-button"
+            disabled={ buttonEnable }
+            onClick={ () => infoUser() }
+          >
+            Entrar
+          </button>
         </div>
-        <label htmlFor="nameUser">
-          <input
-            type="text"
-            name="nameUser"
-            placeholder="Nome"
-            data-testid="login-name-input"
-            onChange={ handleChange }
-          />
-        </label>
-        <button
-          className="btn-login"
-          type="submit"
-          data-testid="login-submit-button"
-          disabled={ buttonEnable }
-          onClick={ () => infoUser() }
-        >
-          Entrar
-        </button>
       </div>
     );
   }
