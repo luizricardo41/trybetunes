@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.artist-album {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  align-items: center;
+  background-color: #E9782A;
+  border: 2px solid;
+}
+
+.artist-album span {
+  background-color: #FCE79E;
+  padding: 0.5rem;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.container-track {
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  padding: 0.5rem 5rem;
+  justify-content: center;
+  background-color: #FCE79E;
+}
+
+.track {
+  display: flex;
+  padding: 1rem 3rem;
+  flex-direction: column;
+  border: 1px solid;
+  background-color: #F0C808;
+}
+
+.track p {
+  text-align: center;
+}
