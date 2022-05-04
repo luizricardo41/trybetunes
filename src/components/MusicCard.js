@@ -1,49 +1,56 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { addSong } from '../services/favoriteSongsAPI';
+import { addSong, removeSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
 import Loading from '../pages/Loading';
+import '../css/musicCard.css';
 
 export default class MusicCard extends Component {
   constructor() {
     super();
     this.state = ({
       load: false,
+      musicsFavorites: [],
     });
+  }
+
+  componentDidMount() {
+    this.recoveryFavorites();
+  }
+
+  recoveryFavorites = () => {
+    getFavoriteSongs().then((data) => this.setState({
+      musicsFavorites: data,
+      load: true,
+    }, () => this.setState({
+      load: false,
+    })));
   }
 
   handleChange = ({ target }) => {
     const { album } = this.props;
-    const { id, name } = target;
-    const value = (target.type === 'checkbox') && target.checked;
-    if (value) {
-      const object = {
-        result: album.filter((music) => music.trackId === parseInt(id, 10)),
-      };
-      this.setState({
-        load: true,
-        [name]: value,
-      });
-      addSong(...object.result).then(() => this.setState({
-        load: false,
-      }));
+    const { id, checked } = target;
+    const music = album.find((track) => track.trackId === Number(id));
+
+    if (checked && id) {
+      addSong(music);
     } else {
-      this.setState({
-        favorite: false,
-      });
+      removeSong(music);
     }
+    this.recoveryFavorites();
   }
 
   render() {
     const { trackId, previewUrl } = this.props;
     const { state: {
       load,
-      favorite,
+      musicsFavorites,
     },
     handleChange,
     } = this;
+
     if (load === false) {
       return (
-        <div>
+        <div className="music-preview">
           <audio data-testid="audio-component" src={ previewUrl } controls>
             <track kind="captions" />
           </audio>
@@ -54,7 +61,7 @@ export default class MusicCard extends Component {
               data-testid={ `checkbox-music-${trackId}` }
               onChange={ handleChange }
               id={ trackId }
-              checked={ favorite }
+              checked={ musicsFavorites.some((track) => track.trackId === trackId) }
             />
           </label>
         </div>
