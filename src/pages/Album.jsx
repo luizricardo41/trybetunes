@@ -5,12 +5,15 @@ import MusicCard from '../components/MusicCard';
 import getMusics from '../services/musicsAPI';
 import Loading from './Loading';
 import '../css/album.css';
+import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 
 export default class Album extends Component {
   constructor() {
     super();
     this.state = ({
       album: [],
+      musicsFavorites: [],
+
     });
   }
 
@@ -18,6 +21,12 @@ export default class Album extends Component {
     const { match: { params } } = this.props;
     getMusics(params.id).then((result) => this.setState({
       album: result,
+    }));
+  }
+
+  recoveryFavorites = () => {
+    getFavoriteSongs().then((data) => this.setState({
+      musicsFavorites: data,
     }));
   }
 
@@ -45,7 +54,9 @@ export default class Album extends Component {
     const {
       state: {
         album,
+        musicsFavorites,
       },
+      recoveryFavorites,
       pageAlbum,
     } = this;
     const verifyAlbum = album.filter((track) => track.trackName !== undefined);
@@ -61,7 +72,8 @@ export default class Album extends Component {
               <MusicCard
                 trackId={ trackId }
                 previewUrl={ previewUrl }
-                album={ album }
+                collection={ { album, musicsFavorites } }
+                favorites={ recoveryFavorites }
               />
             </div>))}
         </div>
