@@ -60,6 +60,7 @@ export default class Album extends Component {
       pageAlbum,
     } = this;
     const verifyAlbum = album.filter((track) => track.trackName !== undefined);
+
     return (
       <div>
         <Header />
