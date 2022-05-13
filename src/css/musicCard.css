@@ -7,6 +7,14 @@
   padding-left: 1rem;
 }
 
+.check-favorite {
+  display: none;
+}
+
+.heart-checked {
+  color: red;
+}
+
 @media (max-width: 600px) {
   .music-preview audio {
     width: 250px;
