@@ -1,0 +1,102 @@
+.image {
+  display: flex;
+  justify-content: center;
+}
+
+.image img {
+  width: 390px;
+}
+
+.info-profile, .page-profile {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-profile span {
+  display: flex;
+  padding: 1rem 0;
+}
+
+.info-profile p {
+  padding: .5rem 0;
+}
+
+.info-profile input, .info-profile textarea {
+  font-size: medium;
+}
+
+.page-profile {
+  background-color: #F0C808;
+  padding: 1rem;
+  align-items: center;
+}
+
+.box-perfil {
+  background-color: #FCE79E;
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 25rem;
+}
+
+.btn-perfil-edit {
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.685);
+  font-size: medium;
+  border: none;
+}
+
+.btn-container {
+  padding-top: 0.8rem;
+  display: flex;
+  justify-content: center;
+  background-color: #FCE79E;
+}
+
+.btn-perfil-edit:enabled {
+  background-color: #E9782A;
+}
+
+.btn-perfil-edit:disabled {
+  background-color: #EFA131;
+}
+
+.btn-perfil-edit:enabled:hover {
+  background-color: #f38d43;
+}
+
+@media (max-width: 600px) {
+  .box-perfil , .image img {
+    width: 65vw;
+  }
+}
+
+@media (max-width: 400px) {
+  .box-perfil input,  .box-perfil textarea {
+    width: 58vw;
+  }
+
+  .btn-perfil-edit:disabled {
+    width: 30vw;
+  }
+
+  .btn-container {
+    width: 50vw;
+  }
+}
+
+@media (max-width: 270px) {
+  .box-perfil input,  .box-perfil textarea {
+    width: 55vw;
+  }
+
+  .btn-perfil-edit {
+    width: 40vw;
+  }
+
+  .btn-container {
+    width: 50vw;
+  }
+}
