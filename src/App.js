@@ -5,7 +5,7 @@ import Content from './components/Content';
 class App extends React.Component {
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter basename={ process.env.PUBLIC_URL }>
         <Content />
       </BrowserRouter>
     );
