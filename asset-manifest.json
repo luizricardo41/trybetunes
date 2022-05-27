@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/trybetunes/static/css/main.b311aeb7.chunk.css",
+    "main.js": "/trybetunes/static/js/main.a764f90c.chunk.js",
+    "main.js.map": "/trybetunes/static/js/main.a764f90c.chunk.js.map",
+    "runtime-main.js": "/trybetunes/static/js/runtime-main.66814c5b.js",
+    "runtime-main.js.map": "/trybetunes/static/js/runtime-main.66814c5b.js.map",
+    "static/js/2.ff821486.chunk.js": "/trybetunes/static/js/2.ff821486.chunk.js",
+    "static/js/2.ff821486.chunk.js.map": "/trybetunes/static/js/2.ff821486.chunk.js.map",
+    "index.html": "/trybetunes/index.html",
+    "static/css/main.b311aeb7.chunk.css.map": "/trybetunes/static/css/main.b311aeb7.chunk.css.map",
+    "static/js/2.ff821486.chunk.js.LICENSE.txt": "/trybetunes/static/js/2.ff821486.chunk.js.LICENSE.txt",
+    "static/media/sem-foto.cfea8412.png": "/trybetunes/static/media/sem-foto.cfea8412.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.66814c5b.js",
+    "static/js/2.ff821486.chunk.js",
+    "static/css/main.b311aeb7.chunk.css",
+    "static/js/main.a764f90c.chunk.js"
+  ]
+}
