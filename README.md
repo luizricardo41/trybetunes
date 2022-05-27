@@ -13,10 +13,13 @@ A proposta do projeto era a criação de um front-end utilizando React-js, traba
 
 ### Funcionamento
 
-Para testar o funcionamento da aplicação, serão necessárias algumas configurações iniciais:
+Para verificar a aplicação online, acesse: https://luizricardo41.github.io/trybetunes/;
+
+Para testar o funcionamento da aplicação localmente, serão necessárias algumas configurações iniciais:
 
 - Depois de forkar e clonar a aplicação:<br><br>
 `npm install` - Para instalação das dependências;<br>
 
 - Depois de feita as instalções, para iniciar a aplicação:<br><br>
 `npm start` - Para inciar a aplicação;
+
